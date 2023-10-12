@@ -1,0 +1,27 @@
+The Terraform configuration provided provisions a simple AWS architecture 
+to run an Nginx web server on an Amazon EC2 instance and expose it to the internet. 
+Here's a breakdown of the architecture:
+
+1. **Amazon EC2 Instance:**
+   - An Amazon EC2 instance is launched using the specified Amazon Linux 2 AMI. 
+   This instance runs an Nginx web server, serving a basic "Hello from Nginx on AWS EC2!" webpage.
+
+2. **Security Group:**
+   - A security group is created to control inbound and outbound traffic to the EC2 instance.
+   - Inbound rule allows HTTP traffic (port 80) from anywhere (0.0.0.0/0).
+   - Outbound rule allows all traffic.
+
+3. **User Data Script:**
+   - The EC2 instance is configured using a user data script.
+   - The script updates the system, installs Nginx, starts the Nginx service, 
+   and creates a simple HTML page.
+
+4. **Output:**
+   - An output is defined to display the public IP address of the EC2 instance.
+
+In summary, the architecture consists of a single EC2 instance running Nginx, 
+accessible from the public internet via its public IP address. 
+The security group ensures that only HTTP traffic (port 80) is allowed to 
+reach the instance. It's a simple setup suitable for serving static content via Nginx. 
+For a more robust and scalable architecture, additional components such as load balancers, 
+auto-scaling groups, and a domain configuration would be added.
