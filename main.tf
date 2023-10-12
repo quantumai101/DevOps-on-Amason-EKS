@@ -1,3 +1,6 @@
+# Below is a Terraform configuration to provision an AWS EC2 instance running an Nginx image 
+# and exposing it to the internet:
+
 provider "aws" {
   region = "ap-southeast-2" # for Asia Pacific (Sydney) region on AWS
 }
